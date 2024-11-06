@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -32,9 +34,9 @@ const AnimatedWords: React.FC<AnimatedWordsProps> = ({ title, style }) => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 1,
-        duration: 1,
+        delay: 6,
         ease: [0.2, 0.65, 0.3, 0.9],
+        duration: 1,
       },
     },
   };
@@ -43,7 +45,7 @@ const AnimatedWords: React.FC<AnimatedWordsProps> = ({ title, style }) => {
     <h1 aria-label={title} role="heading">
       <motion.span
         ref={ref}
-        className="sm:leading-[0.85em]md:max-w-[900px] flex max-w-[500px] flex-col overflow-hidden text-center text-[96px] font-extrabold leading-[0.8em] text-[#e4ded7] sm:text-[120px] md:text-[155.5px] lg:text-[215px]"
+        className="flex max-w-[500px] flex-col overflow-hidden text-center  text-[96px] font-extrabold leading-[0.8em] text-[#e4ded7] sm:text-[120px] sm:leading-[0.85em] md:max-w-[900px] md:text-[155.5px] lg:text-[215px]"
       >
         {title.split(" ").map((word, index) => (
           <motion.div

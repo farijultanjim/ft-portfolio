@@ -11,7 +11,6 @@ import { useEffect } from "react";
 
 //Dynamic
 import dynamic from "next/dynamic";
-import Navbar from "./navbar/Navbar";
 const Work = dynamic(() => import("./work-section/Work"));
 const About = dynamic(() => import("./about-section/About"));
 const Contact = dynamic(() => import("./contact-section/Contact"));
