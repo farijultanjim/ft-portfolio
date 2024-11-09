@@ -91,7 +91,7 @@ const Hero = () => {
           className={`relative flex flex-col items-center justify-center ${monaSans.className}`}
         >
           <AnimatedWords
-            title="Farijul Tanzil"
+            title="FARIJUL TANZIL"
             style="inline-block overflow-hidden pt-1 -mr-4 sm:-mr-5 md:-mr-7 lg:-mr-9 sm:-mb-2 md:-mb-3 lg:-mb-4"
           />
           <motion.div
