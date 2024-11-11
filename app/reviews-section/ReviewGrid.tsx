@@ -3,6 +3,8 @@ import ReviewCard from "./ReviewCard";
 import AnimatedBody from "../animations/AnimatedBody";
 import AnimatedWords2 from "../animations/AnimatedWords2";
 import { monaSans } from "../fonts/monaSans";
+import { motion } from "framer-motion";
+import { reviewDetails } from "./reviewDetails";
 
 const ReviewGrid = () => {
   return (
@@ -20,7 +22,22 @@ const ReviewGrid = () => {
           className="w-[90%] text-center text-sm font-semibold uppercase sm:w-[500px] md:w-[550px] md:text-base"
         />
       </div>
-      <ReviewCard />
+
+      <motion.div className="grid w-full max-w-[1345px] grid-cols-1 grid-rows-6 place-content-center place-items-center gap-6 sm:grid-cols-2 sm:grid-rows-3 lg:grid-cols-2 lg:grid-rows-1">
+        {reviewDetails.map((review, index) => {
+          return (
+            <ReviewCard
+              key={index}
+              name={review.name}
+              role={review.role}
+              company={review.company}
+              profileImage={review.profileImage}
+              testimonial={review.testimonial}
+              index={index}
+            />
+          );
+        })}
+      </motion.div>
     </section>
   );
 };
