@@ -15,6 +15,14 @@ import { monaSans } from "../fonts/monaSans";
 import AnimatedWords from "../animations/AnimatedWords";
 
 const Hero = () => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const href = e.currentTarget.href;
+    const targetId = href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <motion.section
       className="relative z-10 flex h-screen w-full items-stretch justify-center bg-[url('.//../public/heros.jpg')] bg-cover bg-center py-0"
@@ -35,7 +43,12 @@ const Hero = () => {
         {/* Content Button  */}
 
         <div>
-          <Link href="#">
+          <Link
+            href="#contact"
+            onClick={handleScroll}
+            data-blobity-magnetic="false"
+            aria-label="Scroll to Contact Section"
+          >
             <motion.button
               className="hidden rounded-full border-2 border-[#e4ded7] py-2 px-4 font-semibold text-[#e4ded7] sm:block md:text-base"
               variants={bodyAnimation}
@@ -113,16 +126,18 @@ const Hero = () => {
       </div>
 
       <div className="absolute bottom-10 flex items-center justify-center md:bottom-10 lg:w-[90%] lg:max-w-[1440px] lg:justify-between">
-        <motion.div className="max-w-[350px] md:max-w-[400px] lg:max-w-[400px]"
-        variants={bodyAnimation}
+        <motion.div
+          className="max-w-[350px] md:max-w-[400px] lg:max-w-[400px]"
+          variants={bodyAnimation}
         >
           <p className="z-50 text-center text-base font-medium text-[#e4ded7] md:text-xl lg:text-left">
             Creative Developer, Web Designer, Freelancer, Frontend Developer.
           </p>
         </motion.div>
 
-        <motion.div className="max-w-[500px] hidden lg:block lg:max-w-[400px]"
-        variants={bodyAnimation}
+        <motion.div
+          className="hidden max-w-[500px] lg:block lg:max-w-[400px]"
+          variants={bodyAnimation}
         >
           <p className="text-right text-base font-semibold text-[#e4ded7] md:text-xl">
             With 2 years experience as a professional web developer.
