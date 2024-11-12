@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { preLoaderAnime } from "./loader";
-import "./preLoader.css";
+import "./preloader.css";
 
 const PreLoader = () => {
   useEffect(() => {
